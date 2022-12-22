@@ -39,8 +39,10 @@ namespace Auction
 
         public void NotifyAll(string name)  //Notity all the Bidders of the last Accepted Bid
         {
-            if (NotifyLastBid != null)
-                NotifyLastBid(LastAcceptedBid);
+            if (NotifyLastBid == null)
+                return;
+
+            NotifyLastBid(LastAcceptedBid);
             Console.WriteLine($"{name} has bidded on ${LastAcceptedBid}");
         }
     }
