@@ -32,8 +32,9 @@ namespace Auction
 
         public void Bid(string name, int amount)    // throw this Method the Bidders can bid
         {
-            if (amount > LastAcceptedBid)
-                LastAcceptedBid = amount;
+            if (amount < LastAcceptedBid)
+                return;
+            LastAcceptedBid = amount;
             NotifyAll(name);
         }
 
