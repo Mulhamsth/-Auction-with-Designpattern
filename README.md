@@ -9,7 +9,7 @@ If the bid is not higher than the previous bid, it will be rejected. The auction
 The highest bidder at the end of the auction wins the auction and is expected to pay the bid amount for the item or service.<br>
 <br>
 Example of the Programm:
-![Screenshot_20221222_213218](https://user-images.githubusercontent.com/103289035/209222136-b8b7d75f-6dd2-4e4f-adb6-3c9c72bbd67f.png)
+![Screenshot_20221222_214639](https://user-images.githubusercontent.com/103289035/209223283-3916bb68-aece-4891-9666-a6ee57d5950e.png)
 <br>
 <br>
 You can try it yourself
