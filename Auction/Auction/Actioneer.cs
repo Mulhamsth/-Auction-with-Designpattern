@@ -12,15 +12,20 @@ namespace Auction
         so there can't be more than one bid at a time 
         that way every bid could be processed before determin whether the bid is valid or not*/
 
+        // Singleton implementation
         private static Actioneer Instance = null;
+        private static readonly object Lock = new object();
         public static Actioneer GetInstance
         {
             get
             {
-                if (Instance == null)
-                    Instance = new Actioneer();
+                lock (Lock)
+                {
+                    if (Instance == null)
+                        Instance = new Actioneer();
 
-                return Instance;
+                    return Instance;
+                }
             }
         }
 
@@ -44,7 +49,7 @@ namespace Auction
                 return;
 
             NotifyLastBid(LastAcceptedBid);
-            Console.WriteLine($"{name} has bidded on ${LastAcceptedBid}");
+            Console.WriteLine($"{name} placed a bid of ${LastAcceptedBid}");
         }
     }
 }
