@@ -48,7 +48,7 @@ namespace Auction
             if (NotifyLastBid == null)
                 return;
 
-            NotifyLastBid(LastAcceptedBid);
+            NotifyLastBid?.Invoke(LastAcceptedBid);
             Console.WriteLine($"{name} placed a bid of ${LastAcceptedBid}");
         }
     }

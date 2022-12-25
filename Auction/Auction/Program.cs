@@ -4,10 +4,12 @@
     {
         static void Main(string[] args)
         {
+            Actioneer actioneer = Actioneer.GetInstance;
+
             //initialzing the Bidders and give them a Name
-            Bidder bidder1 = new Bidder("Mulham", Actioneer.GetInstance);
-            Bidder bidder2 = new Bidder("Christian", Actioneer.GetInstance);
-            Bidder bidder3 = new Bidder("Martin", Actioneer.GetInstance);
+            Bidder bidder1 = new Bidder("Mulham", actioneer);
+            Bidder bidder2 = new Bidder("Christian", actioneer);
+            Bidder bidder3 = new Bidder("Martin", actioneer);
 
             //starting to bid
             bidder1.Bid(100);
