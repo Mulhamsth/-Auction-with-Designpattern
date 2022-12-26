@@ -43,13 +43,20 @@ namespace Auction
             NotifyAll(name);
         }
 
+
+        LogWriter Log = LogWriter.GetInstance;
+
         public void NotifyAll(string name)  //Notity all the Bidders of the last Accepted Bid
         {
             if (NotifyLastBid == null)
                 return;
 
             NotifyLastBid?.Invoke(LastAcceptedBid);
-            Console.WriteLine($"{name} placed a bid of ${LastAcceptedBid}");
+            string message = $"{name} placed a bid of ${LastAcceptedBid}";
+            Console.WriteLine(message);
+
+            //writing the event in Log file       
+            Log.LogDetails(message);
         }
     }
 }
